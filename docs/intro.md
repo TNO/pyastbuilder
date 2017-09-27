@@ -10,12 +10,13 @@ Many specific or generic parsers exist, however the reason for developing pyAST 
 Use of pyAST is based on python code integration, i.e., use of the libraries that pyAST provides. Installation is (to be) supported in two distinct ways: either by cloning the sources from Git and make them available to your code base, or installing the code with `pip`. 
 Both ways result in the same setup: having the sources available in your python path.
 
-**Setup by Git**
+*Setup by Git*
 
 1. Just clone this project
 1. Make it available on your python path 
 
-**Setup by `pip`** (This method *YET TO BE PROVIDED*)
+*Setup by `pip`*
+This method *YET TO BE PROVIDED*
 
 #### Validating its installation
 
