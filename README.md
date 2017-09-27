@@ -36,9 +36,11 @@ Example to be included
 This method *YET TO BE PROVIDED*
 
 ### Testing your installation
-Here's a demo of what pyAST can do once it's set up. We use the sparqlparser for that.
+Here's a demo of what pyAST can do once it has been set up. We use the `sparqlparser` for that.
 
-```
+First, create a python source file; you can call it `sparqltest.py` and paste the following python code:
+
+```python
 from parsertools.parsers.sparqlparser import parseQuery
 
 # Parsing a complete query
@@ -49,9 +51,6 @@ querystring = '''
 ASK { 
     SELECT * {}
     } 
-    GROUP BY ROUND ("*Expression*")
-    HAVING <test:227>
-    (DISTINCT "*Expression*", "*Expression*", "*Expression*" )
 '''
 
 # Parse the query string
@@ -61,11 +60,54 @@ query = parseQuery(querystring)
 print(query.dump())
 ```
 
+Now, run the python script you've just created:
+```
+$ python sparqltest.py
+```
+
+If your installation was correct, it will produce the following output (or very similar to it):
+```
+parsertools version 0.2.6, build 2676
+[QueryUnit] /ASK { SELECT * { } }/
+|  [Query] /ASK { SELECT * { } }/
+|  |  > prologue:
+|  |  [Prologue] //
+|  |  [AskQuery] /ASK { SELECT * { } }/
+|  |  |  [ASK] /ASK/
+|  |  |  |  ASK
+|  |  |  > where:
+|  |  |  [WhereClause] /{ SELECT * { } }/
+|  |  |  |  [GroupGraphPattern] /{ SELECT * { } }/
+|  |  |  |  |  [LCURL] /{/
+|  |  |  |  |  |  {
+|  |  |  |  |  > pattern:
+|  |  |  |  |  [SubSelect] /SELECT * { }/
+|  |  |  |  |  |  [SelectClause] /SELECT */
+|  |  |  |  |  |  |  [SELECT] /SELECT/
+|  |  |  |  |  |  |  |  SELECT
+|  |  |  |  |  |  |  [ALL_VALUES] /*/
+|  |  |  |  |  |  |  |  *
+|  |  |  |  |  |  > where:
+|  |  |  |  |  |  [WhereClause] /{ }/
+|  |  |  |  |  |  |  [GroupGraphPattern] /{ }/
+|  |  |  |  |  |  |  |  [LCURL] /{/
+|  |  |  |  |  |  |  |  |  {
+|  |  |  |  |  |  |  |  > pattern:
+|  |  |  |  |  |  |  |  [GroupGraphPatternSub] //
+|  |  |  |  |  |  |  |  [RCURL] /}/
+|  |  |  |  |  |  |  |  |  }
+|  |  |  |  |  |  [SolutionModifier] //
+|  |  |  |  |  |  [ValuesClause] //
+|  |  |  |  |  [RCURL] /}/
+|  |  |  |  |  |  }
+|  |  |  [SolutionModifier] //
+|  |  [ValuesClause] //
+```
+The first line identifies the version and build of the tool. The rest of the output presents the parsed AST. Indeed, dumping an AST results in a rather verbose tree, but you will find it very useful as reference when building your particular code. 
 
 ### More Information
 
 Check out the [API Documentation](docs/API/1-Overview.md) for more information.
-
 
 ## Running the tests
 
