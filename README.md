@@ -35,6 +35,37 @@ Example to be included
 *Setup by `pip`*
 This method *YET TO BE PROVIDED*
 
+### Testing your installation
+Here's a demo of what pyAST can do once it's set up. We use the sparqlparser for that.
+
+```
+from parsertools.parsers.sparqlparser import parseQuery
+
+# Parsing a complete query
+# For this, only the import parseQuery is needed
+
+# Define a valid sparql SELECT-query
+querystring = '''
+ASK { 
+    SELECT * {}
+    } 
+    GROUP BY ROUND ("*Expression*")
+    HAVING <test:227>
+    (DISTINCT "*Expression*", "*Expression*", "*Expression*" )
+'''
+
+# Parse the query string
+query = parseQuery(querystring)
+
+# Show its AST
+print(query.dump())
+```
+
+
+### More Information
+
+Check out the [API Documentation](docs/API/1-Overview.md) for more information.
+
 
 ## Running the tests
 
@@ -59,7 +90,7 @@ Give an example
 
 ## Contributing
 
-Please read [CONTRIBUTING.md](https://github.com/TNO/pyAST/tree/master/docs/Contributing.md) for details on our code of conduct, and the process for submitting pull requests to us.
+Please read [CONTRIBUTING.md](docs/Contributing.md) for details on our code of conduct, and the process for submitting pull requests to us.
 
 ## Versioning
 
@@ -73,11 +104,10 @@ See also the list of [contributors](https://github.com/TNO/pyAST/contributors) w
 
 ## License
 
-This project is licensed under the XXX **TBD** License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the XXX **TBD** License - see the [LICENSE.md](docs/LICENSE.md) file for details
 
 ## Acknowledgments
 
 * Hat tip to Paul McGuire, the author of [pyparsing](http://pyparsing.wikispaces.com/). We have left the exhaustive parsing work to this package and build our package on top of that.
 * Support for URIs and IRIs (their prefix processing and base expansion) and conformance to RFC 3987 would not have got at this level of quality without the excellent work of Daniel Gerber, the author of [rfc3987](https://github.com/dgerber/rfc3987): Parsing and validation of URIs (RFC 3896) and IRIs (RFC 3987).
-* etc
 
