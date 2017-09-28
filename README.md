@@ -1,6 +1,6 @@
 # pyAST
 
-pyAST is a python framework for building parsers that construct an *abstract syntax tree* (AST), which can be pythonically navigated, searched and modified. With the package one demonstrative example is distributed: a parser for the W3C SPARQL language, i.e., `sparqlparser.py`, which implements [Sparql v1.1](https://www.w3.org/TR/2013/REC-sparql11-query-20130321/).
+pyAST is a python framework for building parsers that constructs an *object tree* that reflects the language's *abstract syntax tree* (AST), which can be pythonically navigated, searched and modified. Included in the package is one demonstrative example: a parser for the W3C SPARQL language, i.e., `sparqlparser.py`, which implements [Sparql v1.1](https://www.w3.org/TR/2013/REC-sparql11-query-20130321/). However, any other BNF-specified language can be facilitated.
 
 Many specific or generic parsers exist, however the reason for developing pyAST is ***TBD***
 
