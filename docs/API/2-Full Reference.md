@@ -1,22 +1,14 @@
-## API Full Reference
+# API Full Reference
 
+## Package `base`
+ 
+FILE: ...\Parser\src\parsertools\base.py
+	
+### CLASSES
 
+#### class ParseStruct(builtins.object)
+Parent class for all ParseStruct subclasses. These subclasses will typically correspond to productions in a given grammar, e.g. an EBNF grammar.
 
-NAME
-    base - Created on 3 mrt. 2016
-
-DESCRIPTION
-    @author: jeroenbruijning
-
-CLASSES
-    builtins.object
-        ParseStruct
-    
-    class ParseStruct(builtins.object)
-     |  Parent class for all ParseStruct subclasses. These subclasses will typically correspond to productions in a given grammar,
-     |  e.g. an EBNF grammar.
-     |  
-     |  Methods defined here:
      |  
      |  __eq__(self, other)
      |      Compares the instances for equality of:
@@ -143,16 +135,13 @@ CLASSES
      |  
      |  __hash__ = None
 
-FUNCTIONS
-    parseStructFunc(class_)
-        Returns the function that converts a ParseResults object to a ParseStruct object of class "class_", with label set to None, and
-        items set to a recursive list of objects, each of which is either a string or a further ParseStruct object.
-        The function returned is used to set a parseAction for a _pattern.
+## FUNCTIONS
+### parseStructFunc(class_)
+Returns the function that converts a ParseResults object to a ParseStruct object of class "class_", with label set to None, and items set to a recursive list of objects, each of which is either a string or a further ParseStruct object.
+The function returned is used to set a parseAction for a _pattern.
     
-    separatedList(_pattern, sep=',')
-        Similar to a delimited list of instances from a ParseStruct subclass, but includes the separator in its ParseResults. Returns a 
-        delimitedList object with a special parse action. If a resultsName for the delimitedList was specified, the corresponding
-        label is applied to all occurrences of the _pattern.
+### separatedList(_pattern, sep=',')
+Similar to a delimited list of instances from a ParseStruct subclass, but includes the separator in its ParseResults. Returns a delimitedList object with a special parse action. If a resultsName for the delimitedList was specified, the corresponding label is applied to all occurrences of the _pattern.
 
 DATA
     alphanums = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz01234...
@@ -184,7 +173,5 @@ DATA
     stringStart = stringStart
     unicodeString = unicode string literal
 
-FILE
-    ...\parser\parser\parser\parser\src\parsertools\base.py
 
 

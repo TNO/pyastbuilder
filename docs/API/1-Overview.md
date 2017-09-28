@@ -1,8 +1,8 @@
-## API Documentation
+# API Documentation
 
-### Parsertools Overview
+## Parsertools Overview
 
-#### Features
+### Features
 
 
 Parsertools is a framework for building parsers and -- pythonically -- navigate, search or modify the resulting abstract syntax tree (AST). 
@@ -24,7 +24,7 @@ Notable features are:
 - it is built on top of pyparsing as its parsing engine.
 
 
-#### Package Overview
+### Package Overview
 
 The package structure is as follows.
 
@@ -39,7 +39,7 @@ The package structure is as follows.
   * `n3parser\`:		Similar, but now for the N3-syntax specification
   * `alltests.py`:	Stand-alone module to run all Sparql and N3 specified tests 
 
-### How to construct a parser
+## How to construct a parser
 
 Note: For this implementation, a Python version >= 3.3 is mandatory. ***TBD: this is not true anymore I believe***
 
@@ -64,6 +64,6 @@ to create the object, which must appear early in the module. If a subclass of Pa
 10. Basically, this is all that is needed to create a parser for your language.
 
 
-### How to use your parser
+## How to use your parser
 
 A short usage example can be found in [bin\src\parsertools\example.py](example.py). (To be extended.)
