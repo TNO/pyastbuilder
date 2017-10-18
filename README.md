@@ -11,8 +11,11 @@ These instructions will get you a copy of the project up and running on your loc
 ### Prerequisites
 
 You need to install the following software:
-* python 3.3 or higher (***TBC***)
-
+* python 
+    * v3.3 (or higher); 
+    * v2.7 (or higher) ["wide builds"](https://www.python.org/dev/peps/pep-0261/) for full Unicode support.
+* [pyparsing](http://pyparsing.wikispaces.com/)
+* [rfc3987](https://pypi.python.org/pypi/rfc3987)
 
 ### Installing
 
@@ -27,12 +30,13 @@ $ cd /path/to/my/git/directory
 $ git clone https://github.com/TNO/pyAST.git
 ```
 
-1. Make it available on your python path 
+2. Make it available on your python path 
 ```
 Example to be included
 ```
 
 *Setup by `pip`*
+
 This method *YET TO BE PROVIDED*
 
 ### Testing your installation
