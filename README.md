@@ -133,6 +133,16 @@ Explain what these tests test and why
 Give an example
 ```
 
+## Documentation
+The Github environment provides for two locations to document the project: (i) README.md files like this in the code tree, and (ii) wiki pages. In addition, every source code will contain in-code comments. Here we will specify how these three locations for documentation has been used in this project, in order to provide for consistency for the reader, users of the project and developers to the project alike.
+
+### README.md files
+These will contain that part of the documentation that involves the generic design about the source code that is available in the particular part of the tree. This documentation is aimed at the developers of the project with the purpose to provide them with a thorough understanding of:
+
+i. the design approach, 
+ii. the internal logic of the principle process, 
+iii. the structural framework of the project, and
+iv. how these relate to the source tree structure with its different categories of classes that are grouped into distinct directories.
 
 ## Contributing
 
