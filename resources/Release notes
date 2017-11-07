@@ -23,9 +23,7 @@ Build 2284
 	- removed parameter "isdefaultbase" from _applyPrefixesAndBase()
 	- moved check on absolute iri for BASE declarations from _checkBaseDecls() into _applyPrefixesAndBase() (module sparqlparser)
 	- removed _checkBaseDecls from this module
-- Implemented grammar and unit tests for n3parser
 - Moved sparqlparser tests to new folder tests/sparqlparser
-- Created folder tests/n3parser
 - Parser.addElement() now takes an optional parameter denoting the parent class of the element to be created
 
 Version 0.2.6, Build 1757

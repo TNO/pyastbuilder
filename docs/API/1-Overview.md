@@ -36,8 +36,7 @@ The package structure is as follows.
     * (others, to be added)
 * `src\tests\`: 		Since a standard will generally contain a reference implementation, it should have specified test definitions as well. We have used these definitions as the minimal set of tests that a parser should comply with.
   * `sparqlparser\`: 	The specification of all reference tests; in addition, some code to perform these tests
-  * `n3parser\`:		Similar, but now for the N3-syntax specification
-  * `alltests.py`:	Stand-alone module to run all Sparql and N3 specified tests 
+  * `alltests.py`:	Stand-alone module to run all Sparql specified tests 
 
 ## How to construct a parser
 
