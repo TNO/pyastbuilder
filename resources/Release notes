@@ -1,0 +1,97 @@
+Build 2676
+- removed unnecessary import from grammar_functest
+
+Build 2665
+- added ParseStruct class method getPattern(), instance method __getPattern() now goes through getPattern()
+
+Build 2647
+- Added check hasParentPointers() to base.py
+- Small changes to updateWith() and createParentPointers() in base.py, no functional change
+
+Build 2620
+- fixed a problem where IRIREF nodes upon expansion lost their parent and ancestors
+
+Build 2490
+- parsertools again prints version and build information when run
+
+Build 2284
+- SPARQLParser: fixed prefix expansion where prefix equal to ":"
+- SPARQLParser: changed default value of parameter "base" for parseQuery() from "''" to "None"; adapted func_unittest.py accordingly
+- adapted a few SPARQLParser tests with non-absolute IRI expansions: these are now called with "postParseCheck=False" to avoid irrelevant assertion failures
+- Moved prefix checking in module sparqlparser from method _checkIriExpansion() to _applyPrefixesAndBase()
+- Fixed a problem with base IRI processing (SPARQLParser). In the process:
+	- removed parameter "isdefaultbase" from _applyPrefixesAndBase()
+	- moved check on absolute iri for BASE declarations from _checkBaseDecls() into _applyPrefixesAndBase() (module sparqlparser)
+	- removed _checkBaseDecls from this module
+- Implemented grammar and unit tests for n3parser
+- Moved sparqlparser tests to new folder tests/sparqlparser
+- Created folder tests/n3parser
+- Parser.addElement() now takes an optional parameter denoting the parent class of the element to be created
+
+Version 0.2.6, Build 1757
+
+- Bug fixed in getExpansion()
+- Re-implemented _checkIriExpansion (without copy() operation)
+
+Version 0.2.5, Build 1712
+
+- The sparqlparser function expandIri() has been renamed to getExpansion(). Its signature has changed: it now gets called with a single iri/PrefixedName/IRIREF argument.
+	This is normally expected to be an element of a complete parsed query, because it needs prefixes and a base iri for expansion to be possible.
+	The function returns the string which is the expansion of its argument, in the local context of the element within the query. The element itself is NOT changed.
+- Added optional parameter "postCheck" to the constructor of SPARQLStruct (when called with a string to parse). When False, post-processing checks are skipped. The
+	default is True. This can be useful when constructing SPARQLStruct subelements by string argument, since prefixes and base iri might not be present.
+- Added postprocessing method _checkParsedQuery to the constructor of SPARQLStruct (when called with a string to parse). This performs the following checks:
+	- check BASE declarations for correctnets (= IRI must be absolute)
+	- checks whether all IRIs (after prefix processing and base expansion) conform to RFC 3987
+- Added _applyPrefixesAndBase method to SPARQLStruct: recursively attaches prefixes and base iri locally in force to subelements as _prefixes and _baseiri attributes
+- Changed createParentPointers() to recursive form and moved it from parseStructFunc to ParseStruct.__init__()
+- Changed signature of ParseStruct.__init__(): now always takes a string argument ("None" for bootstrapping by parseAction)
+- Added checkBases() method to SPARQLStruct: tests all iris in BaseDecls for being absolute iris 
+- Added checkIris() method to SPARQLStruct: tests all iris in IRIREFs and PrefixedNames for well-formedness according to rfc3987 (after prefix processing and expansion to absolute form)
+- Added Unicode escape function "unescapeUcode()" to sparqlparser
+- alltests now prints version and build numbers
+- Moved version info out of parsertools.__init__.py to separate file
+- Renamed ParseStruct "pattern" attribute to "_pattern" 
+- Converted func_test to unittest format, renamed to func_unittest
+- Cleaned up code and docstrings in base.py and sparqlparser.py
+- Changed SPARQLStruct classmethod expandIri() to a sparqlparser module level function
+- Added design_notes.txt
+- Module extras.py exists no longer, functionality moved to base.py
+
+Version 0.2.4
+
+- Added SPARQLStruct instance method "expandIris()" to replace all iri elements with their expansion, taking into account the prefixes and base iri in force at the location of the iri
+- Added SPARQLStruct classmethod "expandIri()" that takes 
+	- a iri string (conforming to either a PrefixedName or a IRIREF pattern),
+	- a dictionary of prefix-value mappings,
+	- and a base iri
+	and returns the iri string, expanded in the context defined by prefixes and base iri.
+- Added a howto.txt with a short explanation how to use the framework.
+	
+Version 0.2.3
+
+- Introduced SPARQLStruct as subclass of ParseStruct, holds additional SPARQL related info
+- SPARQL parser now generates SPARQLStruct objects
+- SPARQLStruct objects now contain "prefixes" and "baseiri" attributes that keep track of 
+	the current prefixes dictionary and base iri value (accessable through getPrefixes() and getBaseiri() methods)
+
+Version 0.2.2
+
+- Labels added for BASE, PREFIX, WHERE, Update, Prologue and Constraint occurrences
+- Improved patterns for NOT IN, NOT EXISTS, NIL and ANON, leading to better dump() output
+
+Version 0.2.1
+
+- Internal: code cleanup
+- External: example.py extended
+
+Version 0.2
+
+Package now called parsertools.
+
+The structure is as follows:
+- parsertools.base: basic toolset, language independent
+- parsertools.extras: utility functions for helping with specifying grammars. In this release: separatedList.
+- parsertools.parsers: package containing parsers implemented. In this release SPARQL only.
+
+A usage example is given in example.py.
