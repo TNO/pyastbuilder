@@ -28,7 +28,7 @@ These will contain that part of the documentation that involves the generic desi
 * how these relate to the source tree structure with its different categories of classes that are grouped into distinct directories.
 
 #### Wiki pages
-A complete overview of the wiki documentation can be found at the [wiki Home page](wiki). One can expext the following entries:
+A complete overview of the wiki documentation can be found at the [wiki Home page](https://github.com/TNO/pyastbuilder/wiki). One can expext the following entries:
 1. **User Manual**, where descriptions, how-to's and patterns can be found with regards to using the `sparqlparser` as library in your own python code, as well as any other out-of-the-box `xxxparser` that might be provided in the future of this project. Since any other `xxxparser` will be based on this same project, we can safely assume to find many references to very similar or even identical use-cases from the `sparqlparser`. 
 1. **Parser Development Manual**, which will document the generic steps to take in order to create your own EBNF-specified language parser. Whenever you have created your own `xxxparser`, please share this with this project and provide for your own Chapter in our User Manual about the use of this parser. However: **Do Not Duplicate documentation**, but use the `sparqlparser` manual as reference manual instead.
 
