@@ -22,10 +22,10 @@ We therefore follow the following criteria regarding documentation:
 #### README.md files
 These will contain that part of the documentation that involves the generic design about the source code that is available in the particular part of the tree. This documentation is aimed at the developers of the project with the purpose to provide them with a thorough understanding of:
 
-i. the design approach, 
-ii. the internal logic of the principle process, 
-iii. the structural framework of the project, and
-iv. how these relate to the source tree structure with its different categories of classes that are grouped into distinct directories.
+* the design approach, 
+* the internal logic of the principle process, 
+* the structural framework of the project, and
+* how these relate to the source tree structure with its different categories of classes that are grouped into distinct directories.
 
 #### Wiki pages
 A complete overview of the wiki documentation can be found at the [wiki Home page](wiki). One can expext the following entries:
