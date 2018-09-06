@@ -6,6 +6,8 @@
 
 Many specific or generic parsers exist, however the reason for developing `pyastbuilder` is that often the parsing is considered a streaming, dynamic process in which several hooks exist to which one can attach ones own code, as opposed to the generation of a static, abstract syntax tree of the electronic "document", with an API for its access for post-parsed processing. 
 
+The heavy lifting about the actual parsing is left to [pyparsing](http://pyparsing.wikispaces.com/), which is included and extensively used. 
+
 ## Documentation 
 ### Documentation principle
 We follow our following
@@ -13,10 +15,10 @@ We follow our following
 
 ### Documentation criteria
 We therefore follow the following criteria regarding documentation:
-1. All aspects regarding the *use* of the software, as well as its *installation*, including a sanity test for establishing correct installation, will be documented on this WIKI, specifically [here](https://github.com/TNO/pyastbuilder/wiki). 
-1. All aspects regarding the *development of Your Particular Parser* for your own EBNF-defined language, will be documented on the wiki as separate manual.
+1. All aspects regarding the *use* of the software, as well as its *installation*, including a sanity test for establishing correct installation, has been documented on this WIKI, specifically [here](https://github.com/TNO/pyastbuilder/wiki). 
+1. All aspects regarding the *development of Your Particular Parser* for your own EBNF-defined language, will be documented on the wiki as separate manual (***TODO***).
 1. All *description of source code files* that are involved with `pyastparser`, will be documented as README.md files in every folder of the source tree.
-1. *Design documentation* about `pyastbuilder`, as well as all detailed, *code-specific documentation* will be available through [python pydoc](https://docs.python.org/devguide/documenting.html) in the [reStructuredText (reST)](http://docutils.sourceforge.net/rst.html) markup syntax.
+1. *Design documentation* about `pyastbuilder`, as well as all detailed, *code-specific documentation* is available throughout the source code as [reStructuredText (reST)](http://docutils.sourceforge.net/rst.html) markup syntax. Since this type of documentation follows the convention of [python pydoc](https://docs.python.org/devguide/documenting.html), their corresponding HTML-pages can be generated. The documentation will be available after building the HTML by pointing a browser at the file `Doc/build/html/index.html` (***TODO***).
 
 ### Documentation sources
 #### README.md files
@@ -43,15 +45,15 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 ## Authors
 
 * **Jeroen Bruijning** - *Father of idea, main author* - [parser](https://github.com/Jeroen537/parser)
-* **Barry Nouwt** (TNO) - *Restructuring in compliance with Code of Conduct, maintenance*
-* **Paul Brandt** (TNO) - *User of project* - [mediator](https://github.com/plbt5/Mediator)
+* [Barry Nouwt](barry.nouwt@tno.nl) (TNO) - *Restructuring in compliance with Code of Conduct, maintenance*
+* [Paul Brandt](paul.brandt@tno.nl) (TNO) - *User of project* - [mediator](https://github.com/plbt5/Mediator)
 
 
 See also the list of [contributors](https://github.com/TNO/pyastbuilder/contributors) who participate(d) in this project.
 
 ## License
 
-This project is licensed under the XXX **TBD** License - see the [LICENSE.md](docs/LICENSE.md) file for details
+This project is licensed under the MIT License - see the [LICENSE.md](docs/LICENSE.md) file for details
 
 ## Acknowledgments
 
