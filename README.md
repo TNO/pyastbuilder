@@ -13,7 +13,7 @@ We follow our following
 
 ### Documentation criteria
 We therefore follow the following criteria regarding documentation:
-1. All aspects regarding the *use* of the software, as well as its *installation*, including a sanity test for establishing correct installation, will be documented on this WIKI, specifically [here](/wiki). 
+1. All aspects regarding the *use* of the software, as well as its *installation*, including a sanity test for establishing correct installation, will be documented on this WIKI, specifically [here](https://github.com/TNO/pyastbuilder/wiki). 
 1. All aspects regarding the *development of Your Particular Parser* for your own EBNF-defined language, will be documented on the wiki as separate manual.
 1. All *description of source code files* that are involved with `pyastparser`, will be documented as README.md files in every folder of the source tree.
 1. *Design documentation* about `pyastbuilder`, as well as all detailed, *code-specific documentation* will be available through [python pydoc](https://docs.python.org/devguide/documenting.html) in the [reStructuredText (reST)](http://docutils.sourceforge.net/rst.html) markup syntax.
