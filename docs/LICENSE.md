@@ -1,1 +1,0 @@
-A License for the use of pyAST is yet to be selected and specified.
